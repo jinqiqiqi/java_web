@@ -19,7 +19,7 @@
  * under the License.
  */
 
-package com.hpp.games.example;
+package com.boe.energy.user;
 
 /**
  * <code>Set welcome message.</code>

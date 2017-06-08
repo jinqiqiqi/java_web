@@ -6,7 +6,7 @@
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     <constant name="struts.devMode" value="true"/>
 
-    <include file="example.xml"/>
+    <include file="energy.xml"/>
 
     <package name="default" namespace="/" extends="struts-default">
 
@@ -15,7 +15,7 @@
         <action name="index">
             <result type="redirectAction">
                 <param name="actionName">HelloWorld</param>
-                <param name="namespace">/example</param>
+                <param name="namespace">/user</param>
             </result>
         </action>
 

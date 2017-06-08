@@ -19,20 +19,41 @@
  * under the License.
  */
 
-package com.hpp.games.example;
+package com.boe.energy.user;
 
-import com.opensymphony.xwork2.ActionSupport;
-import org.apache.struts2.StrutsTestCase;
+public class Login extends ExampleSupport {
 
-public class HelloWorldTest extends StrutsTestCase {
+    public String execute() throws Exception {
 
-    public void testHelloWorld() throws Exception {
-//        HelloWorld hello_world = new HelloWorld();
-        HelloWorld hello_world = container.inject(HelloWorld.class);
-        String result = hello_world.execute();
-        assertTrue("Expected a success result!",
-                ActionSupport.SUCCESS.equals(result));
-        assertTrue("Expected the default message!",
-                hello_world.getText(HelloWorld.MESSAGE).equals(hello_world.getMessage()));
+        if (isInvalid(getUsername())) return INPUT;
+
+        if (isInvalid(getPassword())) return INPUT;
+
+        return SUCCESS;
     }
+
+    private boolean isInvalid(String value) {
+        return (value == null || value.length() == 0);
+    }
+
+    private String username;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }
